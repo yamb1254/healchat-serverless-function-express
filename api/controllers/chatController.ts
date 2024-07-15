@@ -3,6 +3,7 @@ import axios from "axios";
 import multer from "multer";
 import Chat from "../models/chatModel";
 import User from "../models/userModel";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -17,7 +18,7 @@ const upload = multer({ storage });
 
 export const uploadMiddleware = upload.single("image");
 
-export const sendMessage = async (req: Request, res: Response) => {
+export const sendMessage = async (req: VercelRequest, res: VercelResponse) => {
   const { username, content } = req.body;
 
   const user = await User.findOne({ where: { username } });
@@ -43,7 +44,7 @@ export const sendMessage = async (req: Request, res: Response) => {
   }
 };
 
-export const getMessages = async (req: Request, res: Response) => {
+export const getMessages = async (req: VercelRequest, res: VercelResponse) => {
   try {
     const messages = await Chat.findAll({
       include: [{ model: User, attributes: ["username"] }],

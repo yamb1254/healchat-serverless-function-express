@@ -4,9 +4,10 @@ import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
 import jwt from "jsonwebtoken";
 import { config } from "../config/envConfig";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 
 // Function to handle user signup
-export const signup = async (req: Request, res: Response) => {
+export const signup = async (req: VercelRequest, res: VercelResponse) => {
   const { email, password, username } = req.body;
 
   try {
@@ -25,7 +26,7 @@ export const signup = async (req: Request, res: Response) => {
 };
 
 // Function to handle user login
-export const login = async (req: Request, res: Response) => {
+export const login = async (req: VercelRequest, res: VercelResponse) => {
   const { email, password } = req.body;
 
   try {
@@ -52,7 +53,7 @@ export const login = async (req: Request, res: Response) => {
 };
 
 // Function to validate username and email for password reset
-export const validateUser = async (req: Request, res: Response) => {
+export const validateUser = async (req: VercelRequest, res: VercelResponse) => {
   const { username, email } = req.body;
 
   try {
@@ -72,7 +73,7 @@ export const validateUser = async (req: Request, res: Response) => {
 };
 
 // Function to handle reset password
-export const resetPassword = async (req: Request, res: Response) => {
+export const resetPassword = async (req: VercelRequest, res: VercelResponse) => {
   const { token, newPassword } = req.body;
 
   try {
@@ -94,7 +95,7 @@ export const resetPassword = async (req: Request, res: Response) => {
 };
 
 // Add this function to get user information
-export const getUserInfo = async (req: Request, res: Response) => {
+export const getUserInfo = async (req: VercelRequest, res: VercelResponse) => {
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) {
     return res.status(401).json({ message: "No token provided" });
