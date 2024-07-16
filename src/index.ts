@@ -7,12 +7,23 @@ import chatRoutes from "./routes/chatRoutes";
 const app = express();
 const port = process.env.PORT || 80;
 
+const allowedOrigins = [
+  'https://ambitious-hill-0cd5d7c03.5.azurestaticapps.net',
+  'http://localhost:3000',
+  'https://asp-liked-redbird.ngrok-free.app'
+];
+
 app.use(cors({
-  origin: ['https://heal-chat.vercel.app/',
-     'heal-chat-git-work-branch-yamb1254s-projects.vercel.app',
-     'http://localhost:3000'], 
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 
