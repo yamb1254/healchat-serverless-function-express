@@ -5,7 +5,7 @@ import authRoutes from "./routes/authRoutes";
 import chatRoutes from "./routes/chatRoutes";
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 
 app.use(cors({
   origin: ['https://heal-chat.vercel.app/',
