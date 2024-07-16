@@ -1,1 +1,1 @@
-web: npm run build && npm run start
+web: npx ts-node src/index.ts
