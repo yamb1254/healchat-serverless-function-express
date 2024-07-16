@@ -1,8 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import authRoutes from "./routes/authRoutes"; // Ensure this path is correct
-import chatRoutes from "./routes/chatRoutes";
+import authRoutes from "./src/routes/authRoutes"; // Ensure this path is correct
+import chatRoutes from "./src/routes/chatRoutes";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -12,6 +12,9 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
+
+app.get('/',(req,res)=>res.send('hello world!'));
+
 app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
