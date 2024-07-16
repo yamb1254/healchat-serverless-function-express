@@ -2,11 +2,11 @@
   "name": "healchat-serverless-function-express",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "dev": "ts-node src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +16,10 @@
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
+    "debug": "^4.3.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "heroku": "^8.11.5",
+    "heroku": "^8.1.9",
     "jsonwebtoken": "^9.0.2",
     "login": "^0.8.0",
     "multer": "^1.4.5-lts.1",
