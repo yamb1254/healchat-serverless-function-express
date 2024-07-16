@@ -5,7 +5,7 @@
   "main": "dist/src/index.js",
   "scripts": {
     "dev": "ts-node src/index.ts",
-    "build": "rn -r ./dist",
+    "build": "rm -r ./dist",
     "start": "node dist/src/index.js",
     "postinstall": "tsc"
   },
