@@ -1,14 +1,16 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import authRoutes from "./src/routes/authRoutes"; // Ensure this path is correct
+import authRoutes from "./src/routes/authRoutes"; 
 import chatRoutes from "./src/routes/chatRoutes";
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: ['https://heal-chat.vercel.app/', 'heal-chat-git-work-branch-yamb1254s-projects.vercel.app','http://localhost:3000'], // Add your frontend URL here
+  origin: ['https://heal-chat.vercel.app/',
+     'heal-chat-git-work-branch-yamb1254s-projects.vercel.app',
+     'http://localhost:3000'], 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
