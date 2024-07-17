@@ -1,8 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import authRoutes from "./routes/authRoutes"; 
-import chatRoutes from "./routes/chatRoutes";
+import authRoutes from "./src/routes/authRoutes"; 
+import chatRoutes from "./src/routes/chatRoutes";
 
 const app = express();
 const port = process.env.PORT || 80;
