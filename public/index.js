@@ -9,7 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const authRoutes_1 = __importDefault(require("./src/routes/authRoutes"));
 const chatRoutes_1 = __importDefault(require("./src/routes/chatRoutes"));
 const app = (0, express_1.default)();
-const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 80;
+const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 5000;
 app.use((0, cors_1.default)());
 app.use(body_parser_1.default.json());
 app.get('/', (req, res) => res.send('Hello world!'));
