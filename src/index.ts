@@ -30,8 +30,6 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-app.use(express.static("public"));
-
 app.get('/',(req,res)=>res.send('hello world!'));
 
 
