@@ -6,7 +6,7 @@ console.log("Loaded environment variables:", process.env);
 console.log("DATABASE_URL:", process.env.DATABASE_URL);
 
 export const config = {
-  port: process.env.PORT ? parseInt(process.env.PORT, 10) : 5000,
+  port: process.env.PORT ,
   databaseUrl: process.env.DATABASE_URL,
   jwtSecret: process.env.JWT_SECRET || "your_secret_key",
   emailUser: process.env.EMAIL_USER,
