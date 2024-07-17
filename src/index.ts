@@ -10,7 +10,8 @@ const port = process.env.PORT || 80;
 const allowedOrigins = [
   'https://ambitious-hill-0cd5d7c03.5.azurestaticapps.net',
   'http://localhost:3000',
-  'https://asp-liked-redbird.ngrok-free.app'
+  'https://asp-liked-redbird.ngrok-free.app',
+  'healchatserver.azurewebsites.net'
 ];
 
 app.use(cors({
