@@ -1,9 +1,8 @@
-import express from "express";
+// index.ts
+import app from "./app";
+import { config } from "./config";
 
-const app = express();
-const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 80;
-
-app.get('/', (req, res) => res.send('Hello world!'));
+const port = config.port;
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
