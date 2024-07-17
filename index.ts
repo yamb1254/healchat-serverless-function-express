@@ -5,7 +5,7 @@ import authRoutes from "./src/routes/authRoutes";
 import chatRoutes from "./src/routes/chatRoutes";
 
 const app = express();
-const port = process.env.PORT ;
+const port = 5000 ;
 
 app.use(cors());
 app.use(bodyParser.json());
