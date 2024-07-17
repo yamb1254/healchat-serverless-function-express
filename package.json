@@ -2,11 +2,11 @@
   "name": "healchat-serverless-function-express",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "public/index.js",
   "scripts": {
-    "start": "ts-node index.ts",
+    "dev": "ts-node index.ts",
     "build": "tsc",
-    "dev": "node dist/index.js"
+    "start": "node public/index.js"
   },
   "keywords": [],
   "author": "",
